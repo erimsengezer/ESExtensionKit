@@ -7,7 +7,7 @@
 
 import Foundation
 
-open extension NSArray {
+open extension Array {
     open func getValue(at index: Int) -> Element? {
         guard index >= 0 && index < self.count else {
             return nil
