@@ -8,7 +8,7 @@
 import Foundation
 
 extension Date {
-    func getCurrentDate(_ format: String = "dd/MM/yyyy HH:mm:ss") -> String {
+    public func getCurrentDate(_ format: String = "dd/MM/yyyy HH:mm:ss") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         dateFormatter.timeZone = .current

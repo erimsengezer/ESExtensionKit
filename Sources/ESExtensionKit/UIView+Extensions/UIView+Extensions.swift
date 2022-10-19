@@ -9,13 +9,13 @@ import UIKit
 
 extension UIView {
     
-    func xibSetup() {
+    public func xibSetup() {
         let view = loadFromNib()
         addSubview(view)
         stretch(view: view)
     }
     
-    func loadFromNib<T: UIView>() -> T {
+    public func loadFromNib<T: UIView>() -> T {
         let selfType = type(of: self)
         let bundle = Bundle(for: selfType)
         let nibName = String(describing: selfType)
@@ -26,23 +26,23 @@ extension UIView {
         return view
     }
     
-    func addCornerRadius(_ radius: CGFloat = 4) {
+    public func addCornerRadius(_ radius: CGFloat = 4) {
         layer.cornerRadius = radius
         layer.masksToBounds = true
     }
     
-    func addBorderLine(width: CGFloat = 1, color: UIColor) {
+    public func addBorderLine(width: CGFloat = 1, color: UIColor) {
             layer.borderWidth = width
             layer.borderColor = color.cgColor
     }
     
-    func makeRounded() {
+    public func makeRounded() {
         layer.masksToBounds = false
         layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
     }
     
-    func addShadow(cornerRadius: CGFloat = 16,
+    public func addShadow(cornerRadius: CGFloat = 16,
                    shadowColor: UIColor = UIColor(white: 0.0, alpha: 0.5),
                    shadowOffset: CGSize = CGSize(width: 0.0, height: 3.0),
                    shadowOpacity: Float = 0.3,
@@ -55,7 +55,7 @@ extension UIView {
           layer.shadowRadius = shadowRadius
     }
     
-    func stretch(view: UIView) {
+    public func stretch(view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: topAnchor),
