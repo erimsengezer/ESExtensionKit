@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Array {
+open extension Array {
     func getValue(at index: Int) -> Element? {
         guard index >= 0 && index < self.count else {
             return nil
@@ -16,7 +16,7 @@ extension Array {
     }
 }
 
-extension Sequence where Element: Equatable {
+open extension Sequence where Element: Equatable {
 
     func count(where isIncluded: (Element) -> Bool) -> Int {
         self.filter(isIncluded).count
