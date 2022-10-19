@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func showToast(message : String, font: UIFont, toastColor: UIColor = UIColor.white,
+    public func showToast(message : String, font: UIFont, toastColor: UIColor = UIColor.white,
                    toastBackground: UIColor = UIColor.black) {
         let toastLabel = UILabel()
         toastLabel.textColor = toastColor
